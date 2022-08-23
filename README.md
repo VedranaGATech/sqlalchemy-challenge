@@ -24,7 +24,7 @@ To perform an analysis of stations in the area, we've designed a query to calcul
 
 Lastly, we've designed a query to retrieve the previous 12 months of temperature observation data (TOBS).
 
-![station-histogram](Images/station-histogram.png)
+![station_measurement](Images/station_measurement.png)
 
 
 ### Part 2: Design Your Climate App
