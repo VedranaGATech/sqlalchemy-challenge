@@ -19,7 +19,8 @@ Base.prepare(engine, reflect=True)
 
 Base.classes.keys()
 
-# Save references to each table
+# Base.classes.keys() # Get the table names
+
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 
