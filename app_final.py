@@ -77,7 +77,7 @@ def precipitation():
         r[result[0]] = result[1]
         precipitation.append(r)
 
-    return jsonify(precipitation )
+    return jsonify(precipitation)
 
 
 # create stations route    
@@ -109,7 +109,7 @@ def tobs():
     # create session link
     session = Session(engine)
     
-    #query_date  is "2016-08-23" for the last year query
+    #query_date is "2016-08-23" for the last year query
     results = session.query(Measurement.tobs, Measurement.date).filter(Measurement.date >= query_date).all()
 
     session.close()
@@ -141,17 +141,17 @@ def start(start):
     session.close()
 
     # Create a list to hold results
-    t_list = []
+    st_list = []
     for result in results:
         r = {}
         r["StartDate"] = start_dt
         r["TMIN"] = result[0]
         r["TAVG"] = result[1]
         r["TMAX"] = result[2]
-        t_list.append(r)
+        st_list.append(r)
 
     # jsonify the result
-    return jsonify(t_list)
+    return jsonify(st_list)
 
 # create start and end route
 @app.route("/api/v1.0/min_max_avg/<start>/<end>")
@@ -169,7 +169,7 @@ def start_end(start, end):
     session.close()
 
     # Create a list to hold results
-    t_list = []
+    start_end_list = []
     for result in results:
         r = {}
         r["StartDate"] = start_dt
@@ -177,10 +177,10 @@ def start_end(start, end):
         r["TMIN"] = result[0]
         r["TAVG"] = result[1]
         r["TMAX"] = result[2]
-        t_list.append(r)
+        start_end_list.append(r)
 
     # jsonify the result
-    return jsonify(t_list)
+    return jsonify(start_end_list)
 
 #run the app
 if __name__ == "__main__":
